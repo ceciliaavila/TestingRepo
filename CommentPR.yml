@@ -1,0 +1,17 @@
+variables:
+  BuildConfiguration: "Debug"
+  BuildPlatform: "Any CPU"
+
+jobs:
+    - job: "CommentPR"
+      steps: 
+      - task: SOUTHWORKS.github-pr-comment.custom-publish-comment-task.github-pr-comment@0
+        displayName: 'GitHub PR Comment'
+        inputs:
+          userToken: "$(TOKEN)"
+          bodyFilePath: ./
+          getSubFolders: true
+          keepCommentHistory: false
+
+pool:
+    vmImage: "windows-latest"
