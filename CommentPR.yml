@@ -5,7 +5,7 @@ variables:
 jobs:
     - job: "CommentPR"
       steps: 
-      - task: SOUTHWORKS.github-pr-comment.custom-publish-comment-task.github-pr-comment@0
+      - task: EmilianoQuiroga.github-pr-comment.custom-publish-comment-task.github-pr-comment@0
         displayName: 'GitHub PR Comment'
         inputs:
           userToken: "$(TOKEN)"
